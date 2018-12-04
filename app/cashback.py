@@ -20,13 +20,11 @@ def calculate_cashback(summ, type_of_operation):
     else:
         cashback = summ * 0.01
 
-    if cashback > 3000:
-        cashback = 3000.
+    limit = 3_000.0
+    if cashback > limit:
+        return limit
 
     return cashback
 
 
-print('original purchase =', calculate_cashback(1000, 'original'))
-print('vip =', calculate_cashback(1000, 'vip'))
-print('hight =', calculate_cashback(1000, 'high'))
-print('>100000 =', calculate_cashback(100000, 'vip'))
+
